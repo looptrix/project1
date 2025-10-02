@@ -1,39 +1,60 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
 
 func main() {
+	// 1. Массив фиксированной длины
+	var nums1 [3]int
+	fmt.Println(nums1)
 
-	var scores [6]int //1 создала массив из 6 элементов
+	// 2. Инициализация массива при создании
+	nums2 := [5]int{10, 20, 30, 40, 50}
+	fmt.Println(nums2)
 
-	scores[0] = 85
-	scores[1] = 90
-	scores[2] = 78
-	scores[3] = 92
-	scores[4] = 88
-	scores[5] = 75
-	//2 инициализация массива
-	fmt.Println("исходный массив баллов:", scores) //3 вывод всего массива
+	// 3. доступ к элементам по индексу
+	fmt.Println("первый элемент:", nums2[0])
+	fmt.Println("третий элемент:", nums2[2])
+	fmt.Println("последний элемент:", nums2[len(nums2)-1])
 
-	scores[5] = 80
-	fmt.Println("после изменения последнего элемента", scores) //4 изменение значения
+	// 4. Изменение элемента массива
+	nums2[2] = 99
+	fmt.Println(nums2)
 
-	//5 подсчет суммы
-	sum := 0
-	for i := 0; i < len(scores); i++ {
-		sum += scores[i]
+	// 5. Перебор массива через for
+	for i := 0; i < len(nums2); i++ {
+		fmt.Println("индекс", i, "значение", nums2[i])
 	}
-	fmt.Println("сумма всех баллов:", sum)
 
-	//6 нахождение максимального значения
-	max := scores[0]
+	// 6. Перебор массива через range
+	fmt.Println("Перебор через range:")
+	for index, value := range nums2 {
+		fmt.Println(index, value)
+	}
 
-	for i := 1; i < len(scores); i++ {
-		if scores[i] > max {
-			max = scores[i]
+	// 7. Cумма всех элементов массива
+	sum := 0
+	for _, value := range nums2 {
+		sum += value
+	}
+	fmt.Println(sum)
+
+	// 8. Поиск минимального и максимального значения
+	numbers := [6]int{45, 12, 78, 90, 4, 56}
+	min := numbers[0]
+	max := numbers[0]
+
+	for _, value := range numbers {
+		if value < min {
+			min = value
+		}
+		if value > max {
+			max = value
 		}
 	}
-
-	fmt.Println("максимальный балл:", max)
+	fmt.Println("Массив:", numbers)
+	fmt.Println("Минимум:", min)
+	fmt.Println("Максимум:", max)
 
 }
