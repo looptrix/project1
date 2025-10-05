@@ -5,8 +5,7 @@ import (
 )
 
 func main() {
-	number := [3]int{5, 10, 15}
-	sum := number[0]
-	fmt.Println(sum)
 
+	arrays := [5]int{4, 23, 56, 7, 89}
+	fmt.Println(arrays)
 }
