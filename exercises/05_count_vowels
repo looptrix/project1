@@ -1,0 +1,25 @@
+package main
+import (
+	"fmt"
+	"strings"
+)
+func main() {
+//1. просим пользователя ввести текст
+fmt.Println("введите слово или фразу:")
+var text string
+fmt.Scan(&text)
+
+//2. создаем строку с русскими гласными буквами
+vowels := "аеёищуыэюяАЕЁИОУЫЭЮЯ" 
+
+//3. счетчики для гласных и сохласных
+countVowels := 0
+countConsonants := 0
+
+//4. перебираем текст посимвольно через rune
+for -, ch := range text{
+	letter := string(ch) //превращаем rune в строку, чтобы использовать string.Contains
+}
+
+
+}
